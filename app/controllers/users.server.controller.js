@@ -54,5 +54,20 @@ exports.delete  = function(req,res,next){
 		} else {
 			res.json(req.user);
 		}
-	})
+	});
 };
+
+exports.userByUsername = function(req,res,next){
+	User.findOneByUsername('username', function(err, user){
+		if(err){
+			return next(err);
+		} else {
+			res.json(user);
+		}
+	});
+};
+
+
+
+
+
