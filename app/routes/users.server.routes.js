@@ -6,6 +6,4 @@ module.exports = function(app) {
 	app.route('/users/:userId').get(users.read).put(users.update).delete(users.delete);
 	app.param('userId', users.userByID);
 
-	app.route('/users/username').get(users.userByUsername);
-	//app.parm('username', users.userByUsername);
 };
