@@ -1,10 +1,17 @@
 <!DOCTYPE html>
    <html>
      <head>
-       <title><%= title %></title>
-     </head>
-     <body>
-     	<img src="img/logo.jpg" alt="Logo">
-       <h1><%= title %></h1>
-     </body>
-</html>
+         <title><%= title %></title>
+       </head>
+       <body>
+         <% if ( userFullname ) { %>
+           <h2>Hello <%=userFullname%> </h2>
+           <a href="/signout">Sign out</a>
+         <% } else { %>
+           <a href="/signup">Signup</a>
+           <a href="/signin">Signin</a>
+	   <% } %>
+       <br>
+         <img src="img/logo.jpg" alt="Logo">
+       </body>
+   </html>
