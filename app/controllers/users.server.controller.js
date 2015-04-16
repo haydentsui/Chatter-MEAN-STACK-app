@@ -131,7 +131,7 @@ exports.delete  = function(req,res,next){
 exports.saveOAuthUserProfile = function(req, profile, done){
   User.findOne({
     provider: profile.provider,
-    providerID: profile.providerId
+    providerId: profile.providerId
   }, function(err, user){
     if(err){
       return done(err);
