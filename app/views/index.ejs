@@ -15,17 +15,17 @@
   <% } %>
   
   <!-- Render AngularJS views  -->
-<!-- The example view -->
-  <section ng-include src="'public/example/views/example.client.view.html'"></section>
 
+<section ng-include src="'example/views/example.client.view.html'"></section>
     <!-- Load local libraries -->
-  <script type="text/javascript" src="/lib/angular/angular.js"></script>
+<script type="text/javascript" src="/lib/angular/angular.js"></script>
 
-  <!-- Load the example module -->
-  <script type="text/javascript" src="/example/example.client.module.js"></script>
+<script type="text/javascript" src="/example/example.client.module.js"></script>
 
-  <!-- Bootstrap AngularJS application -->
-  <script type="text/javascript" src="/application.js"></script>
+<script type="text/javascript" src="/example/controllers/example.client.controller.js"></script>
+
+<!-- Bootstrap AngularJS application -->
+<script type="text/javascript" src="/application.js"></script>
 
 </body>
 </html>
