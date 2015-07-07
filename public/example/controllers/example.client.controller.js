@@ -1,5 +1,5 @@
-angular.module('example', []).controller('ExampleController', ['$scope',
-  function($scope) {
-    $scope.name = "MEAN";
+angular.module('example').controller('ExampleController', ['$scope', 
+	function($scope, Authentication) {
+    $scope.name = 'lol';
 }
 ]);
