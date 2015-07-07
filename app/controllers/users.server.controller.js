@@ -96,17 +96,18 @@ exports.read = function(req, res) {
      res.json(req.user);
 };
 
- exports.userByID = function(req, res, next, id) {
+exports.userByID = function(req, res, next, idd) {
      User.findOne({
-       _id: id
+       _id: idd
      }, function(err, user) {
        if (err) {
          return next(err);
        } else {
          req.user = user;
          next();
-	} });
+  } });
 };
+
 
 exports.update = function(req,res,next){
 	User.findByIdAndUpdate(req.user.id, req.body, function(err, user){

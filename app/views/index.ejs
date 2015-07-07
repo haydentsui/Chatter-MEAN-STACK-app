@@ -17,6 +17,9 @@
   <!-- Render AngularJS views  -->
 <section ng-view></section>
 
+<script type="text/javascript">
+    window.user = <%- user || 'null' %>;
+</script>
 <!-- Load local libraries -->
 <script type="text/javascript" src="/lib/angular/angular.js"></script>
 
@@ -28,13 +31,12 @@
 
 <script type="text/javascript" src="/example/config/example.client.routes.js"></script>
 
-<!--
 
 <script type="text/javascript" src="/users/users.client.module.js"></script>
 
 <script type="text/javascript" src="/users/services/authentication.client.service.js"></script>
 
--->
+
 <!-- Bootstrap AngularJS application -->
 <script type="text/javascript" src="/application.js"></script>
 
