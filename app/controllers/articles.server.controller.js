@@ -48,3 +48,63 @@ exports.articleByID = function(req,res,next,id){
 		next();
 	});
 };
+
+
+exports.requiresLogin = function (req,res,next) {
+	if (!req.isAuthenticated()) {
+       return res.status(401).send({
+         message: 'User is not logged in'
+	}); 
+   }
+   
+	next();
+};
+
+exports.read = function(req,res) {
+	res.json(req.user);
+};
+
+exports.update = function(req,res){
+	var article = req.article;
+
+	article.title = req.body.title;
+	article.content = req.body.content;
+
+	article.save(function(err) {
+		if(err) {
+			return res.status(400).send({
+				message: getErrorMessage(err)
+			});
+		} else {
+			res.json(article);
+		}
+	});
+};
+
+exports.hasAuthorization  = function(req,res,next)
+{
+	if(req.article.creator.id != req.user.id)
+	{
+		return res.status(403).send({
+			message: 'User is not authorized'
+		});
+
+		
+	}
+	next();
+
+};
+
+exports.delete = function(req,res) {
+	var article = req.article;
+
+	article.remove(function(err) {
+		if(err) {
+			return res.status(400).send({
+				message: getErrorMessage(err)
+		});
+	} else {
+		res.json(article);
+	}
+	});
+};
