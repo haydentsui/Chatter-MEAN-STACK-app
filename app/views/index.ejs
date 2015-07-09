@@ -6,14 +6,6 @@
 </head>
 <body>
   <!-- If a user is not authenticated, display the authentication links -->
-  <% if (user) { %>
-    <h2>Hello  </h2>
-    <a href="/signout">Sign out</a>
-  <% } else { %>
-    <a href="/signup">Signup</a>
-    <a href="/signin">Signin</a>
-  <% } %>
-  
   <!-- Render AngularJS views  -->
 <section ng-view></section>
 
@@ -26,6 +18,17 @@
 <script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
 
 <script type="text/javascript" src="/lib/angular-resource/angular-resource.js"></script>
+
+<script type="text/javascript" src="/articles/articles.client.module.js"></script>
+
+<script type="text/javascript" src="/articles/controllers/articles.
+client.controller.js"></script>
+
+<script type="text/javascript" src="/articles/services/articles.
+client.services.js"></script>
+
+<script type="text/javascript" src="/articles/config/articles.
+client.routes.js"></script>
 
 <script type="text/javascript" src="/example/example.client.module.js"></script>
 
