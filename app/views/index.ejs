@@ -13,6 +13,8 @@
     window.user = <%- user || 'null' %>;
 </script>
 <!-- Load local libraries -->
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+
 <script type="text/javascript" src="/lib/angular/angular.js"></script>
 
 <script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
@@ -41,6 +43,14 @@ client.routes.js"></script>
 
 <script type="text/javascript" src="/users/services/authentication.client.service.js"></script>
 
+
+<script type="text/javascript" src="/chat/chat.client.module.js"></script>
+
+<script type="text/javascript" src="/chat/services/socket.client.service.js"></script>
+
+<script type="text/javascript" src="/chat/controller/chat.client.controller.js"></script>
+
+<script type="text/javascript" src="/chat/config/chat.client.routes.js"></script>
 
 <!-- Bootstrap AngularJS application -->
 <script type="text/javascript" src="/application.js"></script>

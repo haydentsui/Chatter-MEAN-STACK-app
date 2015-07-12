@@ -30,7 +30,7 @@ module.exports = function(db){
      app.use(methodOverride());
 
   var mongoStore = new MongoStore({
-    db: db.connection.db;
+    db: db.connection.db
   });
 
 
@@ -54,7 +54,7 @@ module.exports = function(db){
 
 	app.use(express.static('./public'));
 	//return app;
-  
+
   require('./socketio')(server, io, mongoStore);
   return server;
 
