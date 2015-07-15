@@ -1,17 +1,27 @@
   <!DOCTYPE html>
 <html xmlns:ng="http://angularjs.org">
-<head
-  <!-- Use the 'title' property to render a page title  -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
   <title><%= title %></title>
 </head>
 <body>
+
   <!-- If a user is not authenticated, display the authentication links -->
   <!-- Render AngularJS views  -->
 <section ng-view></section>
 
 <script type="text/javascript">
     window.user = <%- user || 'null' %>;
+
 </script>
+
+
 <!-- Load local libraries -->
 <script type="text/javascript" src="/socket.io/socket.io.js"></script>
 
@@ -20,6 +30,8 @@
 <script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
 
 <script type="text/javascript" src="/lib/angular-resource/angular-resource.js"></script>
+
+<script src="/lib/angular-css/angular-css.min.js"></script>
 
 <script type="text/javascript" src="/articles/articles.client.module.js"></script>
 

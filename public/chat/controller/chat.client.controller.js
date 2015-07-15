@@ -1,9 +1,10 @@
 // Create the 'chat' controller
-angular.module('chat').controller('ChatController', ['$scope', 'Socket',
-    function($scope, Socket) {
+angular.module('chat').controller('ChatController', ['$scope', 'Authentication','Socket', 
+    function($scope, Authentication, Socket) {
     	// Create a messages array
         $scope.messages = [];
-        
+        $scope.css = "application";
+        $scope.authentication = Authentication;
         // Add an event listener to the 'chatMessage' event
         Socket.on('chatMessage', function(message) {
             $scope.messages.push(message);

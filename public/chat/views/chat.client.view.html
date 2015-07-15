@@ -1,25 +1,91 @@
-<!-- The chat view -->
+
 <section data-ng-controller="ChatController">
-	<!-- List all messages -->
-    <div data-ng-repeat="message in messages" data-ng-switch="message.type">
-    	<!-- Make status messages bolder -->
-        <strong data-ng-switch-when='status'>
-            <span data-ng-bind="message.created | date:'mediumTime'"></span>
-            <span data-ng-bind="message.username"></span>
-            <span>is</span>
-            <span data-ng-bind="message.text"></span>
-        </strong>
-        <!-- Render regular messages -->
-        <span data-ng-switch-default>
-            <span data-ng-bind="message.created | date:'mediumTime'"></span>
-            <span data-ng-bind="message.username"></span>
-            <span>:</span>
-            <span data-ng-bind="message.text"></span>
-        </span>
-    </div>
-    <!-- The message form -->
-    <form ng-submit="sendMessage();">
-        <input type="text" data-ng-model="messageText">
-        <input type="submit">
+    <!-- List all messages -->
+    <div class="sidebar">
+      <header>
+        <h2>chitchat</h2>
+        <img src="images/arrow-down.svg" class="arrow">
+    </header>
+
+    <div class="sidebar-content">
+        <h4 class="sidebar-nav-header">Channels</h4>
+        <ul class="sidebar-nav-list">
+          <li>
+            <a href="test"># general</a>
+        </li>
+        <li class="active">
+            <a href="test"># feature requests <span class="badge unread">2</span></a>
+        </li>
+        <li>
+            <a href="test"># bug reports</a>
+        </li>
+    </ul>
+
+    <h4 class="sidebar-nav-header">Direct Messages</h4>
+    <ul class="sidebar-nav-list">
+      <li>
+        <a href="test">Daniel</a>
+    </li>
+    <li>
+        <a href="test">Martin</a>
+    </li>
+</ul>
+
+</div>
+
+<footer>
+    <img src="images/profile.jpg" class="avatar">
+    <div class="meta">
+      <span class="author" data-ng-bind="authentication.user.fullName"></span>
+      <a href="">Logout</a>
+  </div>
+
+  <img src="images/arrow-up.svg" class="arrow">
+</footer>
+
+</div> <!-- sidebar -->
+
+<div class="main-content">
+  <div class="main-header">
+    <div class="left">
+      <h2>Feature Requests</h2>
+      <!-- <img src="images/arrow-down-black.svg" class="arrow"> -->
+  </div>
+  <div class="right">
+      <input class="search" type="search" placeholder="Search...">
+  </div>
+</div>
+<div class="message-list">
+    <div class="message-item" data-ng-repeat="message in messages" data-ng-switch="message.type">
+      <img src="images/profile.jpg" class="avatar">
+      <div class="message-container">
+        <div class="meta">
+            <span data-ng-switch-default>
+               <span data-ng-bind="message.username" class="author"></span>
+               <span data-ng-bind="message.created | date:'mediumTime'" class="date"></span>
+               <span>:</span>
+               <div class="message" data-ng-bind="message.text">
+               </div>
+           </span>
+           </span>
+       </div>
+
+   </div>
+</div>
+
+<div class="message-form">
+    <form ng-submit="sendMessage();" id="testForm">
+          <textarea data-ng-model="messageText"></textarea>
     </form>
+</div>
+</div>
+
+
+<script type="text/javascript">
+$('textarea').on('keydown', function(event) {
+    if (event.keyCode == 13)
+        if (!event.shiftKey) $('#testForm').submit();
+});
+  
+</script>
 </section>

@@ -3,16 +3,59 @@
 	<!-- If the user is not authenticated show the authentication link -->
 	<div data-ng-show="!authentication.user">
 		<a href="/signup">Signup</a>
-		<a href="/signin">Signin</a>
-	</div>
-	<!-- Otherwise, show the user details and application links -->
-	<div data-ng-show="authentication.user">
-		<h1>Hello <span data-ng-bind="authentication.user.fullName"></span></h1>	
-		<a href="/signout">Signout</a>
-		<ul>
-			<li><a href="/#!/chat">Chat</a></li>
-			<li><a href="/#!/articles">List Articles</a></li>
-			<li><a href="/#!/articles/create">Create Article</a></li>
-		</ul>
-	</div>
-</section>
+		
+		<body>
+			<div class="middlePage">
+				<div class="page-header">
+					<h1 class="logo">Chattr <small>Social Linked Chat!</small></h1>
+				</div>
+
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title">Please Sign In</h3>
+					</div>
+					<div class="panel-body">
+
+						<div class="row">
+
+							<div class="col-md-5" >
+								<a href="/oauth/facebook"><img src="http://techulus.com/buttons/fb.png" /></a><br/>
+								<a href="/oauth/twitter"><img src="http://techulus.com/buttons/tw.png" /></a><br/>
+								<a href="/oauth/google"><img src="http://techulus.com/buttons/gplus.png" /></a>
+							</div>
+
+							<div class="col-md-7" style="border-left:1px solid #ccc;height:160px">
+								<form class="form-horizontal" action="/signin" method"post">
+									<fieldset>
+
+										<input id="textinput" name="username" type="text" placeholder="Enter User Name" class="form-control input-md">
+										<div class="spacing"><input type="checkbox" name="checkboxes" id="checkboxes-0" value="1"><small> Remember me</small></div>
+										<input id="textinput" name="password" type="text" placeholder="Enter Password" class="form-control input-md">
+										<div class="spacing"><a href="#"><small> Not a member?</small></a><br/></div>
+										<button id="singlebutton" name="singlebutton" class="btn btn-info btn-sm pull-right">Sign In</button>
+
+
+									</fieldset>
+								</form>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+
+				<p><a href="https://github.com/haydentsui">About</a> · Hayden</p>
+
+			</div>
+		</div>
+		<!-- Otherwise, show the user details and application links -->
+		<div data-ng-show="authentication.user">
+			<h1>Hello <span data-ng-bind="authentication.user.fullName"></span></h1>	
+			<a href="/signout">Signout</a>
+			<ul>
+				<li><a href="/#!/chat">Chat</a></li>
+				<li><a href="/#!/articles">List Articles</a></li>
+				<li><a href="/#!/articles/create">Create Article</a></li>
+			</ul>
+		</div>
+	</section>
