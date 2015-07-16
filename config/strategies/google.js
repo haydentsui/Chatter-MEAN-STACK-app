@@ -21,10 +21,10 @@ module.exports = function() {
          lastName: profile.name.familyName,
          fullName: profile.displayName,
          email: profile.emails[0].value,
-         username: profile.username,
-         provider: 'google',
+         username: profile.picture,
+         provider: 'googled',
          providerId: profile.id,
-         providerData: providerData
+         avatar: providerData.picture
 		};
        users.saveOAuthUserProfile(req, providerUserProfile, done);
      }));

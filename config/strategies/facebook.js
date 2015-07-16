@@ -22,9 +22,10 @@ module.exports = function(){
   			fullName: profile.displayName,
  			email: profile.emails[0].value,
   			username: profile.username,
-  			provider: 'facebook',
+  			provider: 'facebooks',
   			providerId: profile.id,
-  			providerData: providerData
+  			providerData: providerData,
+  			avatar: profile.photos ? profile.photos[0].value : '/image/defaultAvatar.jpg'
 		};
 
 		users.saveOAuthUserProfile(req, providerUserProfile, done);

@@ -19,9 +19,10 @@ module.exports = function(){
 		var providerUserProfile = {
 			fullName: profile.displayName,
       		username: profile.username,
-      		provider: 'twitter',
+      		provider: 'twitters',
       		providerId: profile.id,
-      		providerData: providerData
+      		providerData: providerData,
+      		avatar: profile.photos ? profile.photos[0].value : '/image/defaultAvatarjpg'
 		};
 
 		users.saveOAuthUserProfile (req, providerUserProfile, done);

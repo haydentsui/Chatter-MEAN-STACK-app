@@ -23,6 +23,10 @@ var UserSchema = new Schema({
 			}
 		}
 	},
+	avatar: {
+		type: String,
+		default: 'images/defaultAvatar.jpg'
+	},
 	username: {
 		type: String,
 		trim: true,

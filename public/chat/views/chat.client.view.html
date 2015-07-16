@@ -34,7 +34,7 @@
 </div>
 
 <footer>
-    <img src="images/profile.jpg" class="avatar">
+    <img ng-src={{authentication.user.avatar}} class="avatar">
     <div class="meta">
       <span class="author" data-ng-bind="authentication.user.fullName"></span>
       <a href="">Logout</a>
@@ -57,7 +57,7 @@
 </div>
 <div class="message-list">
     <div class="message-item" data-ng-repeat="message in messages" data-ng-switch="message.type">
-      <img src="images/profile.jpg" class="avatar">
+      <img ng-src={{message.avatar}} class="avatar">
       <div class="message-container">
         <div class="meta">
             <span data-ng-switch-default>
