@@ -55,7 +55,7 @@
       <input class="search" type="search" placeholder="Search...">
   </div>
 </div>
-<div class="message-list">
+<div class="message-list" schroll-bottom="messages">
     <div class="message-item" data-ng-repeat="message in messages" data-ng-switch="message.type">
       <img ng-src={{message.avatar}} class="avatar">
       <div class="message-container">
@@ -78,14 +78,41 @@
           <textarea data-ng-model="messageText"></textarea>
     </form>
 </div>
+
 </div>
 
 
 <script type="text/javascript">
 $('textarea').on('keydown', function(event) {
     if (event.keyCode == 13)
+    {
         if (!event.shiftKey) $('#testForm').submit();
+        var objDiv = document.getElementById("main-content");
+        var height = 0;
+$('message-item').each(function(i, value){
+    height += parseInt($(this).height());
+});
+
+height += '';
+
+$('message-list').animate({scrollTop: height});
+        //objDiv.scrollTop = objDiv.scrollHeight;
+
+    }
+
 });
   
 </script>
+
+<script type="text/javascript">
+var height = 0;
+$('message-item').each(function(i, value){
+    height += parseInt($(this).height());
+});
+
+height += '';
+
+$('message-list').animate({scrollTop: height});
+</script>
+
 </section>

@@ -25,7 +25,7 @@ module.exports = function(){
   			provider: 'facebooks',
   			providerId: profile.id,
   			providerData: providerData,
-  			avatar: profile.photos ? profile.photos[0].value : '/image/defaultAvatar.jpg'
+  			avatar: profile.photos ? profile.photos[0].value : '/images/defaultAvatar.jpg'
 		};
 
 		users.saveOAuthUserProfile(req, providerUserProfile, done);

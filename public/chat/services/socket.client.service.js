@@ -16,6 +16,7 @@ angular.module('chat').service('Socket', ['Authentication', '$location', '$timeo
                         callback(data);
                     });
                 });
+                
             }
         };
 

@@ -1,0 +1,25 @@
+{
+  "name": "angular-ca-autoscroll",
+  "version": "1.0.0",
+  "homepage": "https://github.com/albulescu/angular-ca-autoscroll",
+  "authors": [
+    "Cosmin Albulescu <cosmin@albulescu.ro>"
+  ],
+  "main": "ca-autoscroll.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "autoscroll",
+    "scroll",
+    "chat"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

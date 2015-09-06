@@ -22,7 +22,7 @@ module.exports = function(){
       		provider: 'twitters',
       		providerId: profile.id,
       		providerData: providerData,
-      		avatar: profile.photos ? profile.photos[0].value : '/image/defaultAvatarjpg'
+      		avatar: profile.photos ? profile.photos[0].value : '/images/defaultAvatar.jpg'
 		};
 
 		users.saveOAuthUserProfile (req, providerUserProfile, done);
